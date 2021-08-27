@@ -1,0 +1,50 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- link:
+    ~/.dotfiles: ''
+    ~/.config/powerline: powerline
+    ~/.config/alacritty: alacritty
+    ~/.config/pgcli: pgcli
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.config/nvim: nvim
+    ~/.config/bat: bat
+    ~/.zshrc: zshrc
+    ~/.vim: nvim # for easier access
+
+- shell:
+  -
+    command: brew bundle --verbose --no-upgrade
+    stdin: true
+    stdout: true
+
+- asdf:
+  - plugin: nodejs
+    global: 14.11.0
+  - plugin: ruby
+    global: 3.1.1
+  - plugin: yarn
+    global: 1.22.5
+  - plugin: python
+    global: 3.9.12
+  - plugin: rlwrap
+    global: 0.45
+  - plugin: helm
+    global: 3.5.3
+  - plugin: helm-docs
+    global: 1.7.0
+
+- pip:
+    file: python/python3.txt
+    binary: $(asdf reshim && asdf where python 3.8.5)/bin/pip3
+    user: true
+    stdout: true
+    stderr: true
+
+- shell:
+  - tic tmux/tmux-256color.terminfo
+  - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || (cd ~/.tmux/plugins/tpm ; git pull)
+  - curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  - $(brew --prefix)/opt/fzf/install
