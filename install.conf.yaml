@@ -8,10 +8,10 @@
     ~/.config/powerline: powerline
     ~/.config/alacritty: alacritty
     ~/.config/pgcli: pgcli
+    ~/.config/tmux/.tmux.powerline.conf: tmux/tmux.powerline.conf
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/bat: bat
     ~/.zshrc: zshrc
-    ~/.vim: nvim # for easier access
 
 - shell:
   -
