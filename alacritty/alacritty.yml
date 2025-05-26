@@ -10,7 +10,10 @@ font:
     family: "Hack Nerd Font"
   italic:
     family: "Hack Nerd Font"
-  size: 13
+  size: 16
+
+# True Only for Retina
+use_thin_strokes: true
 
 # Colors (Gruvbox dark)
 colors:

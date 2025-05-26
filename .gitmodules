@@ -5,6 +5,3 @@
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "meta/dotbot-pip"]
-	path = meta/dotbot-pip
-	url = https://github.com/sobolevn/dotbot-pip.git

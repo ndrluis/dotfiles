@@ -1,10 +1,18 @@
 {
   "segments": {
-    "left": [],
+    "left": [
+      {
+        "function": "powerline.segments.common.vcs.branch"
+      },
+      {
+        "function": "powerline.segments.common.env.virtualenv"
+      }
+    ],
     "right": [
       {
-        "function": "powerline.segments.common.players.itunes",
-        "name": "player"
+        "function": "powerline.segments.common.players.spotify",
+        "name": "player",
+        "format": "{state_symbol} {artist} - {title}"
       },
       {
         "function": "powerline.segments.common.net.network_load",
